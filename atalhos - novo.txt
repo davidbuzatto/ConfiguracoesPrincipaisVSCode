@@ -1,0 +1,589 @@
+// ============================================================
+// KEYBINDINGS PERSONALIZADOS - VSCode
+// Organizado por contexto e funcionalidade
+// ============================================================
+
+[
+    // ============================================================
+    // NAVEGAÇÃO DE PALAVRAS (Word Part Navigation)
+    // Isolado para editor e campos de input
+    // ============================================================
+    
+    // Desabilita navegação padrão de palavras
+    {
+        "key": "ctrl+left",
+        "command": "-cursorWordLeft",
+        "when": "textInputFocus && !accessibilityModeEnabled"
+    },
+    {
+        "key": "ctrl+right",
+        "command": "-cursorWordEndRight",
+        "when": "textInputFocus && !accessibilityModeEnabled"
+    },
+    {
+        "key": "ctrl+shift+left",
+        "command": "-cursorWordLeftSelect",
+        "when": "textInputFocus && !accessibilityModeEnabled"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "-cursorWordEndRightSelect",
+        "when": "textInputFocus && !accessibilityModeEnabled"
+    },
+    
+    // Desabilita navegação em modo acessibilidade (Output panel)
+    {
+        "key": "ctrl+left",
+        "command": "-cursorWordAccessibilityLeft",
+        "when": "accessibilityModeEnabled && isWindows && textInputFocus && focusedView == 'workbench.panel.output'"
+    },
+    {
+        "key": "ctrl+right",
+        "command": "-cursorWordAccessibilityRight",
+        "when": "accessibilityModeEnabled && isWindows && textInputFocus && focusedView == 'workbench.panel.output'"
+    },
+    {
+        "key": "ctrl+shift+left",
+        "command": "-cursorWordAccessibilityLeftSelect",
+        "when": "accessibilityModeEnabled && isWindows && textInputFocus && focusedView == 'workbench.panel.output'"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "-cursorWordAccessibilityRightSelect",
+        "when": "accessibilityModeEnabled && isWindows && textInputFocus && focusedView == 'workbench.panel.output'"
+    },
+    
+    // Navegação por partes de palavra - SOMENTE NO EDITOR
+    {
+        "key": "ctrl+left",
+        "command": "cursorWordPartLeft",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+right",
+        "command": "cursorWordPartRight",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+left",
+        "command": "cursorWordPartLeftSelect",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "cursorWordPartRightSelect",
+        "when": "editorTextFocus"
+    },
+    
+    // Navegação por partes de palavra - NOS CAMPOS DE BUSCA
+    {
+        "key": "ctrl+left",
+        "command": "cursorWordPartLeft",
+        "when": "findInputFocussed || replaceInputFocussed"
+    },
+    {
+        "key": "ctrl+right",
+        "command": "cursorWordPartRight",
+        "when": "findInputFocussed || replaceInputFocussed"
+    },
+    {
+        "key": "ctrl+shift+left",
+        "command": "cursorWordPartLeftSelect",
+        "when": "findInputFocussed || replaceInputFocussed"
+    },
+    {
+        "key": "ctrl+shift+right",
+        "command": "cursorWordPartRightSelect",
+        "when": "findInputFocussed || replaceInputFocussed"
+    },
+
+    // ============================================================
+    // ZOOM - EDITOR (Font Zoom)
+    // ============================================================
+    
+    {
+        "key": "ctrl+oem_plus",
+        "command": "editor.action.fontZoomIn",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+numpad_add",
+        "command": "editor.action.fontZoomIn",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+oem_minus",
+        "command": "editor.action.fontZoomOut",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+numpad_subtract",
+        "command": "editor.action.fontZoomOut",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "editor.action.fontZoomReset",
+        "when": "editorFocus"
+    },
+    {
+        "key": "ctrl+numpad0",
+        "command": "editor.action.fontZoomReset",
+        "when": "editorFocus"
+    },
+    
+    // Desabilita zoom padrão do editor
+    {
+        "key": "ctrl+numpad_add",
+        "command": "-editor.unfold",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+numpad_subtract",
+        "command": "-editor.fold",
+        "when": "editorTextFocus"
+    },
+
+    // ============================================================
+    // ZOOM - TERMINAL (Font Zoom)
+    // ============================================================
+    
+    {
+        "key": "ctrl+oem_plus",
+        "command": "workbench.action.terminal.fontZoomIn",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+numpad_add",
+        "command": "workbench.action.terminal.fontZoomIn",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+oem_minus",
+        "command": "workbench.action.terminal.fontZoomOut",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+numpad_subtract",
+        "command": "workbench.action.terminal.fontZoomOut",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "workbench.action.terminal.fontZoomReset",
+        "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+numpad0",
+        "command": "workbench.action.terminal.fontZoomReset",
+        "when": "terminalFocus"
+    },
+
+    // ============================================================
+    // ZOOM - WORKBENCH (UI Zoom)
+    // Usa Ctrl+Alt para não conflitar com editor/terminal
+    // ============================================================
+    
+    // Desabilita zoom padrão do workbench
+    {
+        "key": "ctrl+oem_plus",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+numpad_add",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+shift+oem_plus",
+        "command": "-workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+oem_minus",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+numpad_subtract",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+shift+oem_minus",
+        "command": "-workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+numpad0",
+        "command": "-workbench.action.zoomReset"
+    },
+    {
+        "key": "ctrl+0",
+        "command": "-workbench.action.focusSideBar"
+    },
+    
+    // Novo binding para zoom do workbench
+    {
+        "key": "ctrl+alt+oem_plus",
+        "command": "workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+alt+numpad_add",
+        "command": "workbench.action.zoomIn"
+    },
+    {
+        "key": "ctrl+alt+oem_minus",
+        "command": "workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+alt+numpad_subtract",
+        "command": "workbench.action.zoomOut"
+    },
+    {
+        "key": "ctrl+alt+0",
+        "command": "workbench.action.zoomReset"
+    },
+    {
+        "key": "ctrl+alt+numpad0",
+        "command": "workbench.action.zoomReset"
+    },
+
+    // ============================================================
+    // MOVIMENTAÇÃO E CÓPIA DE LINHAS
+    // ============================================================
+    
+    // Desabilita atalhos padrão
+    {
+        "key": "alt+up",
+        "command": "-editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+down",
+        "command": "-editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "alt+up",
+        "command": "-editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "alt+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+up",
+        "command": "-editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "-editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-cursorColumnSelectUp",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-cursorColumnSelectDown",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-notebook.cell.copyUp",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-notebook.cell.copyDown",
+        "when": "notebookEditorFocused && !inputFocus"
+    },
+    
+    // Novos bindings reorganizados
+    // Shift+Alt = Mover linhas
+    {
+        "key": "shift+alt+up",
+        "command": "editor.action.moveLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "editor.action.moveLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    
+    // Ctrl+Shift = Copiar linhas
+    {
+        "key": "ctrl+shift+up",
+        "command": "editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+down",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+
+    // ============================================================
+    // MÚLTIPLOS CURSORES
+    // ============================================================
+    
+    // Desabilita atalhos padrão
+    {
+        "key": "ctrl+alt+up",
+        "command": "-editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+up",
+        "command": "-quickInput.previousSeparator",
+        "when": "inQuickInput && quickInputType == 'quickPick' || inQuickInput && quickInputType == 'quickTree'"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "-quickInput.nextSeparator",
+        "when": "inQuickInput && quickInputType == 'quickPick' || inQuickInput && quickInputType == 'quickTree'"
+    },
+    
+    // Mantém Ctrl+Alt para múltiplos cursores
+    {
+        "key": "ctrl+alt+up",
+        "command": "editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+alt+down",
+        "command": "editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+
+    // ============================================================
+    // EDIÇÃO DE CÓDIGO
+    // ============================================================
+    
+    // Comentar linha
+    {
+        "key": "ctrl+shift+c",
+        "command": "editor.action.commentLine",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    
+    // Formatar código
+    {
+        "key": "shift+alt+f",
+        "command": "editor.action.format",
+        "when": "editorTextFocus"
+    },
+    
+    // Organizar imports
+    {
+        "key": "ctrl+shift+i",
+        "command": "editor.action.organizeImports",
+        "when": "editorTextFocus && !editorReadonly && supportedCodeAction =~ /(\\s|^)source\\.organizeImports\\b/"
+    },
+    
+    // Renomear símbolo
+    {
+        "key": "ctrl+r",
+        "command": "editor.action.rename",
+        "when": "editorHasRenameProvider && editorTextFocus && !editorReadonly"
+    },
+    
+    // Desabilita atalhos conflitantes
+    {
+        "key": "ctrl+b",
+        "command": "-editor.action.jumpToBracket",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-markdown.extension.editing.toggleBold",
+        "when": "editorTextFocus && !editorReadonly && editorLangId =~ /^markdown$|^rmd$|^quarto$/"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-editor.action.joinLines",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+
+    // ============================================================
+    // ARQUIVOS E SALVAMENTO
+    // ============================================================
+    
+    // Desabilita Save As padrão
+    {
+        "key": "ctrl+shift+s",
+        "command": "-workbench.action.files.saveAs"
+    },
+    {
+        "key": "ctrl+shift+s",
+        "command": "-workbench.action.files.saveLocalFile",
+        "when": "remoteFileDialogVisible"
+    },
+    {
+        "key": "ctrl+k s",
+        "command": "-saveAll"
+    },
+    
+    // Ctrl+Shift+S = Save All
+    {
+        "key": "ctrl+shift+s",
+        "command": "saveAll"
+    },
+
+    // ============================================================
+    // ZEN MODE
+    // ============================================================
+    
+    // Desabilita atalhos padrão do Shift+Escape
+    {
+        "key": "shift+escape",
+        "command": "-workbench.action.terminal.hideFind",
+        "when": "terminalFindVisible && terminalFocusInAny && terminalHasBeenCreated || terminalFindVisible && terminalFocusInAny && terminalProcessSupported"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-cancelLinkedEditingInput",
+        "when": "LinkedEditingInputVisible && editorTextFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-cancelRenameInput",
+        "when": "editorFocus && renameInputVisible"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-cancelSelection",
+        "when": "editorHasSelection && textInputFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-closeBreakpointWidget",
+        "when": "breakpointWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-closeDirtyDiff",
+        "when": "dirtyDiffVisible"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-closeFindWidget",
+        "when": "editorFocus && findWidgetVisible && !isComposing"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-closeMarkersNavigation",
+        "when": "editorFocus && markersNavigationVisible"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-closeParameterHints",
+        "when": "editorFocus && parameterHintsVisible"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-closeReferenceSearch",
+        "when": "inReferenceSearchEditor && !config.editor.stablePeek"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-closeReferenceSearch",
+        "when": "referenceSearchVisible && !config.editor.stablePeek"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-hideCodeActionWidget",
+        "when": "codeActionMenuVisible"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-hideSuggestWidget",
+        "when": "suggestWidgetVisible && textInputFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-leaveSnippet",
+        "when": "editorTextFocus && inSnippetMode"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-removeSecondaryCursors",
+        "when": "editorHasMultipleSelections && textInputFocus"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-workbench.action.closeQuickOpen",
+        "when": "inQuickOpen"
+    },
+    {
+        "key": "shift+escape",
+        "command": "-workbench.action.hideComment",
+        "when": "commentEditorFocused"
+    },
+    {
+        "key": "ctrl+k z",
+        "command": "-workbench.action.toggleZenMode",
+        "when": "!isAuxiliaryWindowFocusedContext"
+    },
+    {
+        "key": "escape escape",
+        "command": "-workbench.action.exitZenMode",
+        "when": "inZenMode"
+    },
+    
+    // Shift+Escape = Toggle/Exit Zen Mode
+    {
+        "key": "shift+escape",
+        "command": "workbench.action.toggleZenMode",
+        "when": "!isAuxiliaryWindowFocusedContext && !inZenMode"
+    },
+    {
+        "key": "shift+escape",
+        "command": "workbench.action.exitZenMode",
+        "when": "inZenMode"
+    },
+
+    // ============================================================
+    // EXECUTAR CÓDIGO (Language Specific)
+    // ============================================================
+    
+    // Desabilita F6 padrão
+    {
+        "key": "f6",
+        "command": "-extension.CompileRun",
+        "when": "editorLangId == 'c' || editorLangId == 'cc' || editorLangId == 'cpp'"
+    },
+    {
+        "key": "shift+f6",
+        "command": "-workbench.action.focusPreviousPart"
+    },
+    
+    // Shift+F6 = Executar arquivo
+    {
+        "key": "shift+f6",
+        "command": "java.debug.runJavaFile",
+        "when": "editorLangId == 'java'"
+    },
+    {
+        "key": "shift+f6",
+        "command": "extension.CompileRun",
+        "when": "editorLangId == 'c' || editorLangId == 'cc' || editorLangId == 'cpp'"
+    }
+]
