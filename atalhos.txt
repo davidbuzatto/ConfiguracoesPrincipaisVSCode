@@ -585,5 +585,13 @@
         "key": "shift+f6",
         "command": "extension.CompileRun",
         "when": "editorLangId == 'c' || editorLangId == 'cc' || editorLangId == 'cpp'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\u001b\r"
+        },
+        "when": "terminalFocus"
     }
 ]
